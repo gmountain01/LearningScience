@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>그룹 발표 전략 가이드 — 학습과학</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F7F5F0;
+    --surface: #FFFFFF;
+    --ink: #1A1A18;
+    --ink-2: #4A4A45;
+    --ink-3: #888880;
+    --accent: #2D5A3D;
+    --accent-light: #EAF3E8;
+    --accent-mid: #5A8A6A;
+    --warn: #8A5A2D;
+    --warn-light: #F3EAE0;
+    --border: rgba(26,26,24,0.1);
+    --border-strong: rgba(26,26,24,0.18);
+    --rec-border: #2D5A3D;
+    --purple-bg: #EEEDFE;
+    --purple-text: #3C3489;
+    --purple-border: #AFA9EC;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 48px 24px 80px;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 48px;
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .meta-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  .meta-value {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  /* Professor criteria box */
+  .prof-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .prof-box-title {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  .criteria-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .criteria-tag {
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: var(--purple-bg);
+    color: var(--purple-text);
+    border: 1px solid var(--purple-border);
+    font-weight: 400;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  /* Cards */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+  .card-rec {
+    border: 2px solid var(--rec-border);
+  }
+
+  .card-head {
+    padding: 20px 24px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .badge-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .badge {
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .badge-rec {
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid var(--accent-mid);
+  }
+  .badge-num {
+    background: var(--bg);
+    color: var(--ink-2);
+    border: 1px solid var(--border-strong);
+  }
+
+  .head-text { flex: 1; }
+  .card-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 4px;
+  }
+  .card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .card-sub {
+    font-size: 12px;
+    color: var(--ink-3);
+    line-height: 1.5;
+  }
+
+  /* Card body — 2 cols */
+  .card-body {
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .col-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+
+  .item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.5;
+  }
+  .dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .dot-g { background: var(--accent); }
+  .dot-r { background: #C04A30; }
+
+  /* Flow section */
+  .flow-section {
+    padding: 18px 24px 20px;
+  }
+  .flow-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+    font-weight: 400;
+  }
+  .flow-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .step {
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 100px;
+    background: var(--bg);
+    color: var(--ink-2);
+    border: 1px solid var(--border-strong);
+  }
+  .step-arrow {
+    font-size: 11px;
+    color: var(--ink-3);
+  }
+
+  .strategy-box {
+    background: var(--bg);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+  }
+  .strategy-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  .strategy-text {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+  .strategy-text em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* Rec highlight */
+  .rec-highlight {
+    background: var(--accent-light);
+    border: 1px solid rgba(45,90,61,0.2);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .rec-highlight-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .rec-highlight-text {
+    font-size: 13px;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+
+  /* Footer note */
+  .footer-note {
+    margin-top: 40px;
+    padding: 20px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+  .footer-note-title {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  .footer-note-text {
+    font-size: 13px;
+    color: var(--ink-2);
+    line-height: 1.65;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 32px 16px 60px; }
+    .header h1 { font-size: 24px; }
+    .card-body { grid-template-columns: 1fr; }
+    .card-head { flex-direction: column; }
+    .badge-wrap { flex-direction: row; }
+    .header-meta { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="header-eyebrow">연세대학교 교육대학원 · 학습과학</div>
+    <h1>그룹 발표 옵션<br>전략 분석 가이드</h1>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">팀 규모</span>
+        <span class="meta-value">4명</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">발표 시간</span>
+        <span class="meta-value">약 40분</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">협업 조건</span>
+        <span class="meta-value">비대면 중심</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">발표일</span>
+        <span class="meta-value">14~15주차</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="prof-box">
+    <div class="prof-box-title">교수님 맞춤 공통 기준 — 어떤 옵션이든 이 틀 안에서 움직여야 함</div>
+    <div class="criteria-grid">
+      <span class="criteria-tag">직관 vs 데이터 대비</span>
+      <span class="criteria-tag">조건에 따라 효과가 달라진다</span>
+      <span class="criteria-tag">수행 ≠ 학습</span>
+      <span class="criteria-tag">메타인지적 착각 포착</span>
+      <span class="criteria-tag">교육적 함의로 마무리</span>
+      <span class="criteria-tag">실험 설계 구조로 연구 소개</span>
+    </div>
+  </div>
+
+  <div class="section-title">옵션별 전략 분석</div>
+
+  <div class="cards">
+
+    <!-- 옵션 3 — 추천 -->
+    <div class="card card-rec">
+      <div class="card-head">
+        <div class="badge-wrap">
+          <span class="badge badge-rec">전략적 추천</span>
+          <span class="badge badge-num">옵션 3</span>
+        </div>
+        <div class="head-text">
+          <div class="card-label">AI 도구 활용</div>
+          <div class="card-title">AI 도구 학습전략 분석 + 새로운 활용법 제안</div>
+          <div class="card-sub">옵션 1의 이론적 깊이 + 현장 신선함을 동시에 잡을 수 있는 유일한 옵션</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="col-label">강점</div>
+          <div class="item"><div class="dot dot-g"></div>4명이 AI 도구 1개씩 나눠 독립 분석 — 비대면 협업에 최적</div>
+          <div class="item"><div class="dot dot-g"></div>수업 이론 전체를 체크리스트로 활용 가능 (spacing, testing effect, metacognition 등)</div>
+          <div class="item"><div class="dot dot-g"></div>교수님이 수업에서 다루지 않은 영역 — 신선함과 학술적 기여 동시에</div>
+          <div class="item"><div class="dot dot-g"></div>논문 보강 시 옵션 1 수준의 엄밀성 확보 가능</div>
+        </div>
+        <div>
+          <div class="col-label">리스크 및 관리</div>
+          <div class="item"><div class="dot dot-r"></div>인상 비평으로 흐르면 Q&A에서 무너짐 → 각 도구 분석에 논문 1–2편 의무 연결</div>
+          <div class="item"><div class="dot dot-r"></div>"AI가 좋다/나쁘다" 결론 금지 → "어떤 조건에서 어떤 효과"로 nuance 유지</div>
+          <div class="item"><div class="dot dot-r"></div>팀원 AI 활용 수준 차이 → 분석 틀 먼저 공유 후 각자 적용</div>
+        </div>
+      </div>
+      <div class="flow-section">
+        <div class="rec-highlight">
+          <div class="rec-highlight-label">왜 이 옵션인가</div>
+          <div class="rec-highlight-text">4명이 AI 도구 1개씩 독립 분석 후 합산하는 구조라 비대면 협업에 가장 깔끔하다. 교수님 핵심 관심사인 metacognition 관점으로 파고들면 — <em>"AI가 즉시 답을 주면 desirable difficulty가 사라지고 metacognitive illusion이 강화된다"</em> — 옵션 1 수준의 이론적 깊이가 나온다.</div>
+        </div>
+        <div class="flow-label">진행 방식</div>
+        <div class="flow-steps">
+          <span class="step">분석 틀 공동 설계</span>
+          <span class="step-arrow">→</span>
+          <span class="step">도구 배분 (1인 1도구)</span>
+          <span class="step-arrow">→</span>
+          <span class="step">독립 분석 + 논문 탐색</span>
+          <span class="step-arrow">→</span>
+          <span class="step">결과 합산 · 비교</span>
+          <span class="step-arrow">→</span>
+          <span class="step">새로운 활용법 제안</span>
+        </div>
+        <div class="strategy-box">
+          <div class="strategy-label">핵심 발표 프레임</div>
+          <div class="strategy-text">
+            <em>"이 AI 도구는 어떤 학습과학 원리를 구현하고 있는가, 그리고 어떤 원리를 오히려 방해하는가"</em><br><br>
+            예) ChatGPT가 즉시 답을 주면 desirable difficulty가 사라지고 metacognitive illusion이 강화된다 — 이걸 수업 이론과 논문으로 뒷받침. 4개 도구를 같은 기준으로 분석하면 비교 구조가 자동으로 완성됨.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 옵션 1 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="badge-wrap">
+          <span class="badge badge-num">옵션 1</span>
+        </div>
+        <div class="head-text">
+          <div class="card-label">학술 논문 분석</div>
+          <div class="card-title">학술 논문 3편 이상 비교 분석</div>
+          <div class="card-sub">가장 안전한 선택 — 단, 주제 선정이 발표 퀄리티를 결정함</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="col-label">강점</div>
+          <div class="item"><div class="dot dot-g"></div>교수님 수업 구조(실험 설계 → 결과 → 함의)와 형식이 정확히 일치</div>
+          <div class="item"><div class="dot dot-g"></div>1인 1논문 분담으로 비대면 협업 수월</div>
+          <div class="item"><div class="dot dot-g"></div>Q&A 때 논문 근거로 방어 안정적</div>
+        </div>
+        <div>
+          <div class="col-label">리스크 및 관리</div>
+          <div class="item"><div class="dot dot-r"></div>수업 내용 요약으로 끝나면 기대치 미달 → 수업에서 다루지 않은 주제 선정 필수</div>
+          <div class="item"><div class="dot dot-r"></div>결과가 일관될 경우 토론거리 부족 → 조건 변인(학습자 수준, 과목 등)으로 차이 만들기</div>
+        </div>
+      </div>
+      <div class="flow-section">
+        <div class="flow-label">진행 방식</div>
+        <div class="flow-steps">
+          <span class="step">새로운 연구 질문 설정</span>
+          <span class="step-arrow">→</span>
+          <span class="step">논문 배분 (1인 1편+)</span>
+          <span class="step-arrow">→</span>
+          <span class="step">결과 비교 분석</span>
+          <span class="step-arrow">→</span>
+          <span class="step">조건별 차이 정리</span>
+          <span class="step-arrow">→</span>
+          <span class="step">교육적 함의 도출</span>
+        </div>
+        <div class="strategy-box">
+          <div class="strategy-label">핵심 발표 프레임</div>
+          <div class="strategy-text">
+            수업에서 다루지 않은 질문을 직접 설정하고 문헌으로 답하는 구조.<br><br>
+            예) <em>"동영상 강의에서 자막이 학습에 미치는 영향"</em> — 수업 포맷(플립드러닝)과 직접 연결되어 교수님 관심 자극 가능. 논문마다 효과 크기가 다른 이유를 조건 변인으로 분석하면 nuance가 살아남.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 옵션 2 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="badge-wrap">
+          <span class="badge badge-num">옵션 2</span>
+        </div>
+        <div class="head-text">
+          <div class="card-label">공부법 책 분석</div>
+          <div class="card-title">공부법 책 한 권 요약 및 비판적 분석</div>
+          <div class="card-sub">설계에 따라 교수님이 가장 좋아하는 구조를 만들 수 있는 옵션</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="col-label">강점</div>
+          <div class="item"><div class="dot dot-g"></div>분석 범위가 명확해 챕터별 역할 분담 쉬움</div>
+          <div class="item"><div class="dot dot-g"></div>"믿어지는 것 vs 실제 효과" 구조가 수업 핵심 메시지와 정확히 맞닿음</div>
+          <div class="item"><div class="dot dot-g"></div>청중과 함께 해부하는 토론 유발 쉬움 — 40분 구성에 유리</div>
+        </div>
+        <div>
+          <div class="col-label">리스크 및 관리</div>
+          <div class="item"><div class="dot dot-r"></div>"이 책은 틀렸다"로만 끝나면 비판에 그침 → 과학적으로 타당한 부분도 반드시 짚기</div>
+          <div class="item"><div class="dot dot-r"></div>책 선정 의견 불일치 가능 → 후보 2–3권 공유 후 투표로 빠르게 결정</div>
+        </div>
+      </div>
+      <div class="flow-section">
+        <div class="flow-label">진행 방식</div>
+        <div class="flow-steps">
+          <span class="step">책 선정 (후보 투표)</span>
+          <span class="step-arrow">→</span>
+          <span class="step">챕터 분담</span>
+          <span class="step-arrow">→</span>
+          <span class="step">주장 추출 + 이론 대조</span>
+          <span class="step-arrow">→</span>
+          <span class="step">타당 / 부분 / 오류 분류</span>
+          <span class="step-arrow">→</span>
+          <span class="step">메타인지적 함의 도출</span>
+        </div>
+        <div class="strategy-box">
+          <div class="strategy-label">핵심 발표 프레임</div>
+          <div class="strategy-text">
+            <em>"이 책이 독자에게 심어주는 메타인지적 착각은 무엇인가"</em><br><br>
+            Carpenter et al.의 교수자 유창성 연구처럼, 유창하게 읽히는 책이 오히려 잘못된 학습 믿음을 강화할 수 있다는 구조. 비판에서 그치지 않고 "어떻게 읽어야 하는가"로 마무리하면 교육적 함의가 완성됨.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 옵션 4 -->
+    <div class="card">
+      <div class="card-head">
+        <div class="badge-wrap">
+          <span class="badge badge-num">옵션 4</span>
+        </div>
+        <div class="head-text">
+          <div class="card-label">앱 · 플랫폼 분석</div>
+          <div class="card-title">학습 앱 / 온라인 플랫폼 학습전략 분석</div>
+          <div class="card-sub">가장 쉽게 피상적이 될 수 있는 옵션 — 설계 방식이 전부</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div>
+          <div class="col-label">강점</div>
+          <div class="item"><div class="dot dot-g"></div>1인 1앱 역할 분담 자연스러움</div>
+          <div class="item"><div class="dot dot-g"></div>청중 공감 쉽고 시각 자료 풍부 — 발표 자료 만들기 수월</div>
+          <div class="item"><div class="dot dot-g"></div>수업 이론을 실제 제품에 적용하는 구조라 교육적 함의가 구체적</div>
+        </div>
+        <div>
+          <div class="col-label">리스크 및 관리</div>
+          <div class="item"><div class="dot dot-r"></div>"이 앱엔 spacing effect가 있어요" 수준으로 끝나면 기대치 미달 → 효과 근거 논문 필수 연결</div>
+          <div class="item"><div class="dot dot-r"></div>앱이 주장하는 효과와 실제 연구 결과 비교 구조가 없으면 약해짐</div>
+        </div>
+      </div>
+      <div class="flow-section">
+        <div class="flow-label">진행 방식</div>
+        <div class="flow-steps">
+          <span class="step">앱 선정 + 배분</span>
+          <span class="step-arrow">→</span>
+          <span class="step">학습전략 UX 분석</span>
+          <span class="step-arrow">→</span>
+          <span class="step">이론 매핑</span>
+          <span class="step-arrow">→</span>
+          <span class="step">효과 근거 논문 연결</span>
+          <span class="step-arrow">→</span>
+          <span class="step">플랫폼 간 비교 + 개선 제안</span>
+        </div>
+        <div class="strategy-box">
+          <div class="strategy-label">핵심 발표 프레임</div>
+          <div class="strategy-text">
+            학습과학 원리를 구현한 앱 설계 감사(audit) — <em>"이 앱은 어떤 원리를 잘 구현했고, 어떤 원리를 놓쳤는가, 그리고 사용자는 실제로 학습하고 있는가(수행 ≠ 학습)"</em><br><br>
+            예) Duolingo가 spacing + testing effect를 활용하는 건 맞지만, gamification이 오히려 metacognitive illusion을 강화하는 방향으로 작동할 수 있다는 구조.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-note">
+    <div class="footer-note-title">공통 전략 메모</div>
+    <div class="footer-note-text">
+      어떤 옵션을 선택하든 "현상 소개 → 이론 연결 → 조건 분석 → 교육적 함의"라는 교수님 수업 구조를 그대로 따라가는 게 핵심이다. 가장 중요한 선택 기준은 하나 — <strong>팀원들이 가장 재미있게 파고들 수 있는 주제가 무엇인가.</strong> 어떤 옵션이든 설계는 얼마든지 다듬을 수 있다.
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
