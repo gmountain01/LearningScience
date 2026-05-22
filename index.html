@@ -1321,6 +1321,10 @@
       <span class="tab-num">STAGE 03</span>
       <span class="tab-title">통합 발표 기획</span>
     </button>
+    <button class="tab" onclick="showTab(event, 'stage4')">
+      <span class="tab-num">STAGE 04</span>
+      <span class="tab-title">발표 방향 검토</span>
+    </button>
   </div>
 
   <!-- ========== STAGE 1: 발표 옵션 검토 ========== -->
@@ -2545,6 +2549,293 @@
           <li>좋은 개입은 사후 피드백이 아니라 <em>판단 형성 시점</em>에 들어가야 한다</li>
           <li>AI 시대의 교육은 메타인지를 <em>대체</em>하지 않고 <em>촉진</em>하는 설계를 요구한다</li>
         </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== STAGE 4: 발표 방향 검토 ========== -->
+  <div id="stage4" class="tab-content">
+
+    <div class="section-title">발표 방향 검토</div>
+    <p class="section-intro">
+      STAGE 02에서 정리한 4편의 발제 내용과 STAGE 03의 시대 축 프레임을 기반으로,
+      팀원 4인의 역할을 분배하고 발표 방향을 검토합니다.
+    </p>
+
+    <!-- 역할 분배 -->
+    <div class="constants">
+      <div class="constants-label">팀 역할 분배</div>
+      <div class="constants-title">4인 1팀 · 각자의 강점에 집중</div>
+      <ul class="constants-list">
+        <li><strong>황지원</strong> — 발표 (40분 단독 진행). 본인이 선정한 논문을 중심으로 전체 서사를 이끔</li>
+        <li><strong>김혜진 · 유나연</strong> — Q&A 대응 집중. 각자 발제한 논문 영역의 질문에 즉시 응답할 수 있도록 준비</li>
+        <li><strong>조아리</strong> — 발표 자료 제작 집중. 슬라이드 구성·시각자료·타임라인 관리를 전담</li>
+      </ul>
+    </div>
+
+    <!-- 1인 발표 근거 -->
+    <div class="strategy-box" style="margin-top: 18px;">
+      <div class="strategy-label">왜 1인 발표인가 — 학습과학적 근거</div>
+      <div class="strategy-text">
+        발표자가 교체될 때마다 청중은 새로운 화자의 말투·속도·맥락에 다시 적응해야 하며, 이 과정에서 <em>외재적 인지부하(extraneous cognitive load)</em>가 증가합니다(Sweller et al., 2019).
+        Mayer의 멀티미디어 학습 이론에서도 정보 전달 채널의 불필요한 변동은 <em>일관성 원리(coherence principle)</em>를 위반해 핵심 내용의 처리를 방해한다고 경고합니다.
+        또한 단일 화자가 유지될 때 청중은 <em>사회적 존재감(social presence)</em>을 안정적으로 형성하여 발표 내용에 더 깊이 몰입할 수 있습니다(Garrison et al., 2000).
+        따라서 40분이라는 제한된 시간 안에서 메타인지라는 복잡한 주제를 다루려면, 1인이 일관된 서사를 이끌고 나머지 팀원이 Q&A와 자료 제작에 집중하는 구조가 학습과학적으로 가장 효과적입니다.
+      </div>
+    </div>
+
+    <!-- 01. 3가지 발표 방향 -->
+    <div class="section-title" style="margin-top: 40px;">01 · 3가지 발표 방향</div>
+    <p class="section-intro">
+      세 안은 채택 논문 구성과 발표의 중심축이 다릅니다.
+      <strong>방향 A</strong>는 4편을 균등하게 배치하고, <strong>방향 B</strong>는 행동·실험 데이터를 다룬 3편으로 집중하며,
+      <strong>방향 C</strong>는 인지부하 이론(Martin LRI)과 AI 가드레일 실증(Bastani)을 중심축으로 삼습니다.
+    </p>
+
+    <div class="cards">
+
+      <!-- 방향 A -->
+      <div class="card">
+        <div class="card-head">
+          <div class="badge-wrap">
+            <span class="badge badge-num">방향 A</span>
+          </div>
+          <div class="head-text">
+            <div class="card-label">4-STAGE NARRATIVE</div>
+            <div class="card-title">착각에서 보정으로</div>
+            <div class="card-sub">4편을 균등하게 4단 서사(문제 가시화 → AI 시대 위협 → 개입 시점 전환 → 인출 연습)로 묶는 가장 안전한 안</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="col-label">강점</div>
+            <div class="item"><div class="dot dot-g"></div>기존 수업 커리큘럼의 4단 구조를 그대로 따르므로 추가 기획 부담이 가장 적음</div>
+            <div class="item"><div class="dot dot-g"></div>4편의 논문이 균등한 비중으로 등장해 팀원 간 형평성이 높음</div>
+            <div class="item"><div class="dot dot-g"></div>측정 도구의 진화(설문 → 행동 로그)라는 학술적 흐름이 자연스럽게 드러남</div>
+          </div>
+          <div>
+            <div class="col-label">관리할 점</div>
+            <div class="item"><div class="dot dot-r"></div>발표자(황지원) 본인 논문 비중이 1/4에 그쳐, 발표자의 전문성이 부각되지 않음</div>
+            <div class="item"><div class="dot dot-r"></div>논문별 순차 소개 구조라 개별 발제(STAGE 02)와 차별점이 약함</div>
+            <div class="item"><div class="dot dot-r"></div>4인 발언이 균등 배분되어 "1인 발표자" 형식과 다소 충돌</div>
+          </div>
+        </div>
+        <div class="flow-section">
+          <div class="flow-label">진행 흐름 (40분)</div>
+          <div class="flow-steps">
+            <span class="step">오프닝 (3분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">① 문제 가시화 · 조아리+김혜진 (10분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">② AI 시대 위협 · 유나연+황지원 (12분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">③ 개입 시점 전환 (8분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">④ 인출 연습 · 클로징 (5분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">Q&A (2분)</span>
+          </div>
+          <div class="strategy-box">
+            <div class="strategy-label">채택 논문</div>
+            <div class="strategy-text">4편 전체 (조아리·김혜진·유나연·황지원)</div>
+          </div>
+          <div class="strategy-box" style="margin-top: 8px;">
+            <div class="strategy-label">핵심 메시지</div>
+            <div class="strategy-text">메타인지 착각은 어떻게 발견됐고, AI 시대에 왜 더 위험해졌으며, 어떻게 깨야 하는가</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 방향 B -->
+      <div class="card">
+        <div class="card-head">
+          <div class="badge-wrap">
+            <span class="badge badge-num">방향 B</span>
+          </div>
+          <div class="head-text">
+            <div class="card-label">MEASURE TO DESIGN</div>
+            <div class="card-title">측정에서 설계로</div>
+            <div class="card-sub">행동·실험 데이터로 메타인지를 다룬 3편(김혜진·유나연·황지원)으로 학술적 일관성을 확보</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="col-label">강점</div>
+            <div class="item"><div class="dot dot-g"></div>"행동 데이터로 메타인지를 측정한다"는 일관된 학술적 기준으로 발표가 관통됨</div>
+            <div class="item"><div class="dot dot-g"></div>클릭 로그(김혜진) → RCT(유나연) → 인지부하 이론(황지원) 순서로 학술적 무게감이 축적됨</div>
+            <div class="item"><div class="dot dot-g"></div>발표자 1인이 단일 흐름을 이끌기에 적합한 구조</div>
+          </div>
+          <div>
+            <div class="col-label">관리할 점</div>
+            <div class="item"><div class="dot dot-r"></div>조아리 논문이 발표 콘텐츠에서 빠짐 → 사전 동의 및 Q&A 담당 등 역할 명확화 필요</div>
+            <div class="item"><div class="dot dot-r"></div>황지원의 메인 논문(Martin et al.)은 이론 논문이라 자체 실험이 없음 → Bastani et al. 실험 데이터를 인용해 보충 필요</div>
+            <div class="item"><div class="dot dot-r"></div>황지원 파트가 13분으로 길어질 위험이 있어 시간 배분 관리가 핵심</div>
+          </div>
+        </div>
+        <div class="flow-section">
+          <div class="flow-label">진행 흐름 (40분)</div>
+          <div class="flow-steps">
+            <span class="step">오프닝 · 황지원 (3분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">① 측정 · 김혜진 클릭 로그 (9분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">② 실증 · 유나연 RCT (12분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">③ 이론+실험 · 황지원 LRI+Bastani (13분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">클로징 (2분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">Q&A (1분)</span>
+          </div>
+          <div class="strategy-box">
+            <div class="strategy-label">채택 논문</div>
+            <div class="strategy-text">3편 (김혜진·유나연·황지원). 조아리는 발표 보조(Q&A) 역할</div>
+          </div>
+          <div class="strategy-box" style="margin-top: 8px;">
+            <div class="strategy-label">핵심 메시지</div>
+            <div class="strategy-text">메타인지를 행동 데이터로 측정할 수 있게 됐을 때, 비로소 개입 설계가 가능해졌다</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 방향 C (팀 검토 중) -->
+      <div class="card card-rec">
+        <div class="card-head">
+          <div class="badge-wrap">
+            <span class="badge badge-rec">팀 검토 중</span>
+            <span class="badge badge-num">방향 C</span>
+          </div>
+          <div class="head-text">
+            <div class="card-label">GUARDRAILS</div>
+            <div class="card-title">가드레일 없는 AI vs LRI</div>
+            <div class="card-sub">인지부하 이론(Martin LRI)과 AI 가드레일 실증(Bastani)을 발표 중심축으로, 김혜진·유나연 논문이 메커니즘과 RCT 증거를 보조</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <div class="col-label">강점</div>
+            <div class="item"><div class="dot dot-g"></div>두 논문(LRI 이론 + 가드레일 실증)의 학술적 연관성이 발표의 중심축이 되어 논증 구조가 명확함</div>
+            <div class="item"><div class="dot dot-g"></div>Bastani et al.(약 1,000명 RCT, 터키 고교 수학) 실증 데이터가 강력한 도입부 역할</div>
+            <div class="item"><div class="dot dot-g"></div>"문제 제기(Bastani) → 메커니즘(김혜진) → 이론 설계(Martin LRI) → 처방 효과(유나연)"의 4단 논증이 완성됨</div>
+            <div class="item"><div class="dot dot-g"></div>발표자가 가장 깊이 다룬 영역을 중심으로 발표하므로 Q&A 방어력이 높음</div>
+          </div>
+          <div>
+            <div class="col-label">관리할 점</div>
+            <div class="item"><div class="dot dot-r"></div>조아리 논문이 발표 콘텐츠에서 빠짐 → 사전 동의 및 Q&A 담당 등 역할 명확화 필요</div>
+            <div class="item"><div class="dot dot-r"></div>발표자 발언 시간이 약 25분으로 가장 길어 호흡 조절과 시각자료 보완이 필요</div>
+            <div class="item"><div class="dot dot-r"></div>Bastani et al. 실험 데이터의 정확한 인용을 위해 원문(PNAS 2025) 확인 권장</div>
+          </div>
+        </div>
+        <div class="flow-section">
+          <div class="flow-label">진행 흐름 (40분)</div>
+          <div class="flow-steps">
+            <span class="step">오프닝 · Bastani 충격 결과 (3분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">① 메커니즘 · 김혜진 (6분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">② Bastani 실험 정밀 분석 · 황지원 (10분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">③ LRI 이론 설계 · 황지원 (9분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">④ RCT 증거 · 유나연 (7분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">클로징 (3분)</span>
+            <span class="step-arrow">→</span>
+            <span class="step">Q&A (2분)</span>
+          </div>
+          <div class="strategy-box">
+            <div class="strategy-label">채택 논문</div>
+            <div class="strategy-text">4편 (황지원 Martin LRI + Bastani 가드레일 2편, 김혜진 1편, 유나연 1편). 조아리는 발표 보조(Q&A) 역할</div>
+          </div>
+          <div class="strategy-box" style="margin-top: 8px;">
+            <div class="strategy-label">핵심 메시지</div>
+            <div class="strategy-text">Bastani가 문제를 보였고, Martin이 이론을 제시했으며, Chen이 효과를 증명했다</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 02. 3안 비교표 -->
+    <div class="section-title" style="margin-top: 40px;">02 · 3안 비교표</div>
+    <div class="comparison-table" style="margin-top: 20px;">
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>방향 A</th>
+            <th>방향 B</th>
+            <th style="background: var(--accent-soft); color: var(--accent);">방향 C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>채택 논문</td>
+            <td>4편</td>
+            <td>3편</td>
+            <td style="background: var(--accent-soft);">4편 (황지원 2편+김혜진+유나연)</td>
+          </tr>
+          <tr>
+            <td>조아리 참여</td>
+            <td>발표 콘텐츠 포함</td>
+            <td>Q&A·보조만</td>
+            <td style="background: var(--accent-soft);">Q&A·보조만</td>
+          </tr>
+          <tr>
+            <td>발표자 본인 비중</td>
+            <td>1/4</td>
+            <td>1/3 + Bastani 인용</td>
+            <td style="background: var(--accent-soft);">메인 중심축 (2편)</td>
+          </tr>
+          <tr>
+            <td>1인 발표 적합도</td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td><span class="level-badge level-high">높음</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">가장 높음</span></td>
+          </tr>
+          <tr>
+            <td>학술적 깊이</td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td><span class="level-badge level-high">큼</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">가장 큼</span></td>
+          </tr>
+          <tr>
+            <td>청중 임팩트</td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">가장 큼</span></td>
+          </tr>
+          <tr>
+            <td>Q&A 방어력</td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td><span class="level-badge level-high">단단</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">가장 단단</span></td>
+          </tr>
+          <tr>
+            <td>개별 발제와 차별성</td>
+            <td><span class="level-badge level-low">약함</span></td>
+            <td><span class="level-badge level-high">큼</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">가장 큼</span></td>
+          </tr>
+          <tr>
+            <td>준비 부담</td>
+            <td><span class="level-badge level-low">적음</span></td>
+            <td><span class="level-badge level-mid">보통</span></td>
+            <td style="background: var(--accent-soft);"><span class="level-badge level-high">큼</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 비교 요약 -->
+    <div class="footer-note">
+      <div class="footer-note-title">비교 요약</div>
+      <div class="footer-note-text">
+        세 안 모두 1인 발표자 구조를 따르지만, 발표의 중심축과 논문 배치 방식이 다릅니다.<br><br>
+        <strong>방향 A</strong>는 준비 부담이 가장 적고 4편이 균등하게 등장하지만, 논문별 순차 소개라 개별 발제(STAGE 02)와 차별점이 약합니다.<br>
+        <strong>방향 B</strong>는 행동 데이터 기반 3편으로 학술적 일관성이 높지만, 조아리 논문이 발표 콘텐츠에서 빠지므로 역할 분담에 대한 사전 합의가 필요합니다.<br>
+        <strong>방향 C</strong>는 인지부하 이론(Martin LRI)과 AI 가드레일 실증(Bastani)의 학술적 연관성을 중심축으로 삼아 4단 논증이 완성되지만, 발표자 발언 비중이 약 25분으로 가장 길어 호흡 조절과 시각자료 보완이 필요합니다.
       </div>
     </div>
 
