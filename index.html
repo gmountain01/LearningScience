@@ -1026,6 +1026,62 @@
     font-weight: 600;
   }
 
+  /* ── STAGE 5: Slide boxes ── */
+  .slide-box {
+    margin-top: 18px;
+    padding: 22px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .slide-box-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .slide-box-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.012em;
+  }
+  .slide-box-list {
+    list-style: none;
+    padding: 0;
+  }
+  .slide-box-list li {
+    font-size: 13.5px;
+    color: var(--ink-2);
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 1.7;
+  }
+  .slide-box-list li:last-child { margin-bottom: 0; }
+  .slide-box-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .slide-box-list li strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .slide-box-bridge {
+    background: #EEF0FB;
+    border-color: var(--accent-border);
+  }
+  .slide-box-bridge .slide-box-label { color: var(--accent-hover); }
+
   /* Comparison table */
   .comparison-table {
     background: var(--surface);
@@ -1324,6 +1380,10 @@
     <button class="tab" onclick="showTab(event, 'stage4')">
       <span class="tab-num">STAGE 04</span>
       <span class="tab-title">발표 방향 검토</span>
+    </button>
+    <button class="tab" onclick="showTab(event, 'stage5')">
+      <span class="tab-num">STAGE 05</span>
+      <span class="tab-title">발표 자료 초안</span>
     </button>
   </div>
 
@@ -2844,6 +2904,158 @@
         <strong>방향 A</strong>는 준비 부담이 가장 적고 4편이 균등하게 등장하지만, 논문별 순차 소개라 개별 발제(STAGE 02)와 차별점이 약합니다.<br>
         <strong>방향 B</strong>는 행동 데이터 기반 3편으로 학술적 일관성이 높지만, 조아리 논문이 발표 콘텐츠에서 빠지므로 역할 분담에 대한 사전 합의가 필요합니다.<br>
         <strong>방향 C</strong>는 인지부하 이론(Martin LRI)과 AI 가드레일 실증(Bastani)의 학술적 연관성을 중심축으로 삼아 4단 논증이 완성되지만, 발표자 발언 비중이 약 25분으로 가장 길어 호흡 조절과 시각자료 보완이 필요합니다.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== STAGE 5: 발표 자료 초안 ========== -->
+  <div id="stage5" class="tab-content">
+
+    <div class="section-title">발표 자료 초안</div>
+    <p class="section-intro">
+      메타인지_생성형AI_발표초안.pptx의 전체 슬라이드 12장을 아래에 정리합니다.<br>
+      학습 과학 관점에서 3편의 논문을 <strong>문제인식 → 브릿지 → 본론 → 해결책 → 교육적 함의</strong> 순서로 전개합니다.
+    </p>
+
+    <!-- Slide 1: 표지 -->
+    <div class="slide-box" style="text-align: center; padding: 40px 24px;">
+      <div class="slide-box-label">SLIDE 01 — 표지</div>
+      <div style="font-size: 13px; color: var(--ink-3); margin-bottom: 8px;">학습 과학(Learning Sciences) 관점에서 본 3편의 논문 분석</div>
+      <div style="font-size: 22px; font-weight: 700; color: var(--ink); letter-spacing: -0.02em; margin-bottom: 4px;">메타인지의 착각과 생성형 AI</div>
+      <div style="font-size: 15px; color: var(--ink-2);">적에서 동반자로</div>
+      <div style="font-size: 13px; color: var(--ink-3); margin-top: 16px;">발표자: [이름]</div>
+    </div>
+
+    <!-- Slide 2: 도입 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 02 — 도입</div>
+      <div class="slide-box-title">메타인지의 한계와 '보정 불일치(Calibration Discrepancy)'</div>
+      <ul class="slide-box-list">
+        <li><strong>메타인지란?</strong> — 자신이 무엇을 알고 모르는지 점검·조절하는 능력으로, 자기조절학습(SRL)의 핵심 요소</li>
+        <li><strong>메타인지적 보정(calibration)</strong> — 자신의 예상 성적과 실제 성적이 얼마나 일치하는가. 둘의 차이가 '보정 불일치'이며, 양(+)은 과신, 음(−)은 과소평가</li>
+        <li><strong>발표의 목적</strong> — 인간의 메타인지적 보정 한계가 생성형 AI라는 강력한 도구를 만났을 때 벌어지는 현상과 해결책 탐구</li>
+      </ul>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 03 — 문제인식 · PDF 01 (Lee &amp; Bosch, 2025)</div>
+      <div class="slide-box-title">정확한 보정도 무너뜨리는 '과신' 성향</div>
+      <ul class="slide-box-list">
+        <li><strong>연구 개요</strong> — 미국 대학생 210명, 컴퓨터 기반 통계 학습 환경에서 학습 전 자기평가·실제 수행·이후 학습 전략을 분석</li>
+        <li><strong>의외의 출발점</strong> — 표본 전체로는 보정이 꽤 정확함 (사전 실제 점수 54.9% vs 자기평가 55.7%, 평균 불일치 +0.8%p)</li>
+        <li><strong>핵심은 개인차</strong> — 자신의 점수를 과대평가한 학생일수록 이후 학습 전략을 덜 사용하는 관계가 나타남</li>
+        <li><strong>SRL과의 연결</strong> — 보정이 어긋난(특히 과신한) 학생은 적절한 학습 행동을 선택하지 못하는 경향</li>
+      </ul>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 04 — 문제인식 · PDF 01 (Lee &amp; Bosch, 2025)</div>
+      <div class="slide-box-title">과신이 치르는 비용: '준비 행동'의 위축</div>
+      <ul class="slide-box-list">
+        <li><strong>핵심 데이터</strong> — 보정 불일치가 클수록(=과신) 퀴즈 전 준비 행동을 유의하게 적게 함 (b = −9.100, p &lt; .001; 단 R² ≈ 0.08)</li>
+        <li><strong>주관적 판단 > 객관적 실력</strong> — 실제 점수가 아니라 '스스로 잘했다고 믿는 정도'가 준비 행동을 예측 (자기평가 b = −9.841, p &lt; .001 / 실제 점수는 비유의)</li>
+        <li><strong>시사점</strong> — "내가 이미 안다"는 주관적 확신이 인지적 준비 노력을 줄이는 방향으로 작용 — 단, 인과가 아닌 연관 관계</li>
+      </ul>
+    </div>
+
+    <!-- Slide 5: Bridge -->
+    <div class="slide-box slide-box-bridge">
+      <div class="slide-box-label">SLIDE 05 — 브릿지</div>
+      <div class="slide-box-title">인간의 메타인지적 한계와 AI의 만남</div>
+      <ul class="slide-box-list">
+        <li><strong>학습 환경의 변화</strong> — 자신의 지식을 정확히 판단하기 어렵고 주관적 확신에 좌우되기 쉬운 학습자가, '정답'을 즉시 제공하는 생성형 AI를 자유롭게 쓰게 된다면?</li>
+        <li><strong>예상되는 위험</strong> — 보정 불일치(과신)의 심화, 사고의 외주화(cognitive offloading), 준비·점검 행동의 위축</li>
+      </ul>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 06 — 본론 · PDF 02 (Bastani et al., 2025, PNAS)</div>
+      <div class="slide-box-title">가드레일 없는 AI와 '수행 ≠ 학습'</div>
+      <ul class="slide-box-list">
+        <li><strong>연구 개요</strong> — 튀르키예 고등학교 약 1,000명 대상 무작위 대조 실험(RCT). 수학 복습 세션에 GPT-4 기반 튜터 도입</li>
+        <li><strong>세 집단</strong> — ① ChatGPT를 모방한 자유형 'GPT Base' ② 가드레일을 넣은 'GPT Tutor' ③ AI 미사용 통제군</li>
+        <li><strong>단기 수행의 급증</strong> — AI 지원으로 푼 연습 문제에서 GPT Base는 48%, GPT Tutor는 127% 성적 향상</li>
+        <li><strong>이론적 통찰</strong> — 그러나 연습 단계의 높은 '수행(performance)'이 곧 실제 '학습'을 뜻하지는 않음</li>
+      </ul>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 07 — 본론 · PDF 02 (Bastani et al., 2025, PNAS)</div>
+      <div class="slide-box-title">AI가 사라진 순간: 17% 성적 하락</div>
+      <ul class="slide-box-list">
+        <li><strong>실제 성적 하락</strong> — AI 접근을 차단한 시험에서 GPT Base 집단은 통제군보다 17% 낮은 성적 (GPT Tutor는 통제군과 차이 없음)</li>
+        <li><strong>메커니즘(목발 효과)</strong> — GPT Base 첫 세션 첫 상호작용의 67%가 질문을 그대로 반복하거나 정답을 요구하는 피상적 메시지</li>
+        <li><strong>핵심 증거</strong> — GPT Base의 논리 오류가 연습 성적엔 영향을 줬지만 시험 성적으로는 전이되지 않음 → 설득당한 게 아니라 단순히 정답을 복사</li>
+        <li><strong>정답 자판기 vs 코치</strong> — GPT Base는 정답을 그냥 내주지만, GPT Tutor는 단계별 힌트만 제공</li>
+      </ul>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 08 — 본론 · PDF 02 (Bastani et al., 2025, PNAS)</div>
+      <div class="slide-box-title">양방향 착각: 메타인지의 붕괴</div>
+      <ul class="slide-box-list">
+        <li><strong>환상 속의 학습자(GPT Base)</strong> — 시험 성적이 떨어졌는데도, 자신이 덜 배웠거나 못했다고 인식하지 못함</li>
+        <li><strong>반대 방향의 착각(GPT Tutor)</strong> — 시험 성적이 통제군과 다르지 않았는데도, 자신이 더 잘했다고 인식</li>
+        <li><strong>핵심 시사점</strong> — AI를 쓰면 실제 학습 효과와 무관하게 "잘 배웠다"고 느끼는 착각이 양방향으로 발생 → 메타인지 모니터링의 붕괴</li>
+        <li><strong>AI 신뢰성 문제</strong> — GPT Base의 정답률은 51%에 불과 (논리 오류 42%, 산술 오류 8%)</li>
+      </ul>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 09 — 해결책 · PDF 03 (Chen &amp; Alibakhshi, 2026, JCAL)</div>
+      <div class="slide-box-title">AI, 메타인지 비계(Scaffold)로 다시 태어나다</div>
+      <ul class="slide-box-list">
+        <li><strong>연구 개요</strong> — 대학 EFL 학습자 310명(실험 139·통제 171), 12주간 ChatGPT·Poe·Bard 활용 영어 수업</li>
+        <li><strong>설계 유의</strong> — 개인 무작위가 아닌 학급 단위 군집 배정 준실험(quasi-experimental). 인과 추론은 PDF 02의 RCT보다 제한적</li>
+        <li><strong>해결책 설계(가드레일)</strong> — '학생 초안 작성 → AI의 비판적 피드백 → 인간(교사) 평가' 워크플로우 강제, 6시간 AI 리터러시 교육 병행</li>
+        <li><strong>학습 과학적 의미</strong> — AI가 정답을 주는 대신, 학생이 먼저 산출하고 AI는 피드백만 제공하도록 설계</li>
+      </ul>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 10 — 해결책 · PDF 03 (Chen &amp; Alibakhshi, 2026, JCAL)</div>
+      <div class="slide-box-title">전략·성취 향상과 분산 인지</div>
+      <ul class="slide-box-list">
+        <li><strong>전략 사용 향상</strong> — 통제군 대비 실험군은 인지·메타인지·자원관리 전략 모두 상대적으로 약 12~15% 높음 (효과크기 partial η² = 0.16~0.19)</li>
+        <li><strong>언어 성취도 향상</strong> — 영어 성취도 78.4점 vs 72.1점, 약 6.3점 차이 (partial η² = 0.22, 가장 큰 효과)</li>
+        <li><strong>학생 자기보고(834개 저널)</strong> — 문법 등 낮은 차원 작업은 AI에 맡기고(분산 인지), 확보한 여력을 글 구조 계획·모니터링에 쓴다는 패턴</li>
+        <li><strong>자기효능감</strong> — 오류 불안이 줄고 "고칠 수 있다"는 통제감이 높아졌다는 반두라식 자기효능감 보고</li>
+      </ul>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide-box">
+      <div class="slide-box-label">SLIDE 11 — 교육적 함의</div>
+      <div class="slide-box-title">생성형 AI 시대의 학습 설계</div>
+      <ul class="slide-box-list">
+        <li><strong>AI는 양날의 검</strong> — 무방비한 AI는 메타인지를 무너뜨리고 학습을 저해할 수 있으나(PDF 02), 가드레일과 함께라면 자기조절학습을 강화(PDF 03)</li>
+        <li><strong>증거의 수렴(설계 차이 인정)</strong> — 대상(고교 수학 vs 대학 영어)·설계(RCT vs 준실험)는 다르지만, "설계가 결과를 좌우한다"는 방향으로 수렴</li>
+        <li><strong>교수자의 새로운 역할</strong> — 도구 도입 여부가 아니라 '학습자의 인지적 개입을 어떻게 유지·강제할 것인가'를 설계하는 인지 환경 설계자</li>
+        <li><strong>핵심 메시지</strong> — AI 시대 교육의 승패는 도구 성능이 아니라 '학습 설계(learning design)'에 달려 있음</li>
+      </ul>
+    </div>
+
+    <!-- Slide 12: Q&A + 참고문헌 -->
+    <div class="slide-box" style="text-align: center; padding: 32px 24px;">
+      <div class="slide-box-label">SLIDE 12</div>
+      <div style="font-size: 24px; font-weight: 700; color: var(--ink); margin-bottom: 4px;">Q &amp; A</div>
+    </div>
+
+    <div class="footer-note">
+      <div class="footer-note-title">참고문헌</div>
+      <div class="footer-note-text" style="font-size: 12.5px; line-height: 1.8;">
+        Lee, H., &amp; Bosch, N. (2025). Calibration Discrepancy Predicts Students' Subsequent Metacognitive Strategy Use in Computer-based Learning Environments. <em>International Journal of Artificial Intelligence in Education</em>, 35, 3746–3779.<br><br>
+        Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., &amp; Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <em>PNAS</em>, 122(26), e2422633122.<br><br>
+        Chen, J., &amp; Alibakhshi, G. (2026). AI-Powered Applications' Effects on English Language Learners' Cognitive, Metacognitive, and Resource Management Strategies, and Language Achievement. <em>Journal of Computer Assisted Learning</em>, 42(1), e70171.<br><br>
+        Learning Sciences 강의 자료
       </div>
     </div>
 
