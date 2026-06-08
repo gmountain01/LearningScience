@@ -1082,6 +1082,143 @@
   }
   .slide-box-bridge .slide-box-label { color: var(--accent-hover); }
 
+  /* ── STAGE 7: PDF viewer ── */
+  .pdf-viewer {
+    margin-top: 24px;
+  }
+  .pdf-viewer-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+  .pdf-viewer-controls button {
+    padding: 6px 16px;
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .pdf-viewer-controls button:hover {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+  .pdf-viewer-controls button:disabled {
+    opacity: 0.35;
+    cursor: default;
+    background: var(--surface-2);
+    color: var(--ink-3);
+    border-color: var(--border);
+  }
+  .pdf-viewer-controls .page-indicator {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-2);
+    min-width: 80px;
+    text-align: center;
+  }
+  .pdf-slide-container {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .pdf-slide-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .pdf-slide-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    padding: 12px 20px 0;
+  }
+
+
+  /* ── STAGE 7: Slide map table ── */
+  .slide-map-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+  }
+  .slide-map-table thead th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 500;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--border-strong);
+  }
+  .slide-map-table tbody tr {
+    border-bottom: 1px solid var(--border);
+  }
+  .slide-map-table tbody tr:last-child {
+    border-bottom: none;
+  }
+  .slide-map-bridge-row {
+    background: var(--accent-soft);
+  }
+  .slide-map-section {
+    font-weight: 600;
+    font-size: 13px;
+    padding: 12px 12px;
+    vertical-align: top;
+    white-space: nowrap;
+    line-height: 1.5;
+  }
+  .slide-map-table td:last-child {
+    padding: 10px 12px;
+  }
+  .slide-map-chip {
+    display: inline-block;
+    padding: 3px 10px;
+    margin: 3px 4px 3px 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 12.5px;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: all 0.15s;
+    line-height: 1.6;
+  }
+  .slide-map-chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+  .slide-map-chip b {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--accent);
+    margin-right: 3px;
+  }
+  .slide-map-chip-bridge {
+    background: var(--accent-light);
+    border-color: var(--accent-border);
+    color: var(--accent-hover);
+  }
+
   /* Comparison table */
   .comparison-table {
     background: var(--surface);
@@ -1389,6 +1526,10 @@
       <span class="tab-num">STAGE 06</span>
       <span class="tab-title">발표 자료 초안 수정</span>
     </button>
+    <button class="tab" onclick="showTab(event, 'stage7')">
+      <span class="tab-num">STAGE 07</span>
+      <span class="tab-title">최종 발표 자료</span>
+    </button>
   </div>
 
   <!-- ========== STAGE 1: 발표 옵션 검토 ========== -->
@@ -1396,8 +1537,7 @@
 
     <div class="section-title">발표 방향 선택</div>
     <p class="section-intro">
-      네 가지 발표 옵션을 검토하고, 팀의 협업 조건(비대면 중심)과 학습과학 핵심 주제를 고려해
-      <strong>옵션 1 — 학술 논문 분석</strong>을 선택했습니다.
+      네 가지 옵션 중 팀 협업 조건과 학습과학 주제를 고려해 <strong>옵션 1 — 학술 논문 분석</strong>을 선택했습니다.
     </p>
 
     <div class="selection-note">
@@ -1619,9 +1759,10 @@
 
     <div class="section-title">개별 발제 공유 폼</div>
     <p class="section-intro">
-      네 분이 각자 선정한 메타인지 관련 논문의 발제 공유 폼입니다.
-      논문 요약, 학습과학 개념과의 연결, 키워드, 그리고 네 분의 교수·학습 경험 사례까지 포함되어 있습니다.
+      네 명이 각자 선정한 메타인지 관련 논문의 발제 공유 폼입니다.
+      논문 요약, 학습과학 개념과의 연결, 키워드, 그리고 네 명의 교수·학습 경험 사례까지 포함되어 있습니다.
       아래 발제자 이름을 클릭해 내용을 확인하실 수 있습니다.
+      <a href="https://docs.google.com/document/d/1ZKubwZeXhCOIYloXAPXIFAaeEPJsX8JFOvuHCk7XTEg/edit?tab=t.0" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:.5em; color:#4a6cf7; text-decoration:underline;">📄 초고 원고 보기</a>
     </p>
 
     <!-- Presenter tabs -->
@@ -1663,7 +1804,7 @@
           <div class="paper-presenter-row">
             <span class="paper-presenter-name">김혜진</span>
             <span class="paper-affiliation">교육공학</span>
-            <span class="paper-date">발제일 5/12 (화)</span>
+            <span class="paper-date">발제일 2026.05.12</span>
           </div>
           <div class="paper-title-en">Calibration Discrepancy Predicts Students' Subsequent Metacognitive Strategy Use in Computer-based Learning Environments</div>
           <div class="paper-meta-row">
@@ -1764,9 +1905,17 @@
         </div>
 
         <div class="paper-section">
-          <div class="paper-section-label">06 · 네 분의 교수·학습 경험 사례</div>
+          <div class="paper-section-label">06 · 네 명의 교수·학습 경험 사례</div>
           <div class="cases-grid">
-            <div class="case-card empty">김혜진 선생님 사례 — 미작성</div>
+            <div class="case-card c1">
+              <div class="case-presenter">김혜진 선생님</div>
+              <div class="case-text">
+                이 연구를 읽으면서 학습자이자 교수자로서 스스로를 다시 돌아보게 됐습니다.
+                뇌는 원래 <em>인지적 구두쇠</em>라서 힘든 사고를 잘 안 하려는 경향이 있고, 실제 시험 성적보다 주관적인 자신감이 다음 학습 전략을 정하는 데 더 큰 영향을 줍니다.
+                따라서 학습 초기 단계부터 퀴즈를 반복적으로 풀게 하는 것이 중요합니다.
+                기존에는 퀴즈를 학습이 끝난 뒤 평가·복습용으로만 썼지만, <em>시험 효과</em>가 학습 초기에 반복적으로 할 때 가장 효과적이라는 연구 결과를 보고 변경해서 적용해 볼 만하다고 느꼈습니다.
+              </div>
+            </div>
             <div class="case-card c2">
               <div class="case-presenter">유나연 선생님</div>
               <div class="case-text">
@@ -1800,7 +1949,7 @@
           <div class="paper-presenter-row">
             <span class="paper-presenter-name">유나연</span>
             <span class="paper-affiliation">조기영어교육과</span>
-            <span class="paper-date">발제일 5/19</span>
+            <span class="paper-date">발제일 2026.05.19</span>
           </div>
           <div class="paper-title-en">AI-Powered Applications' Effects on English Language Learners' Cognitive, Metacognitive, and Resource Management Strategies, and Language Achievement</div>
           <div class="paper-meta-row">
@@ -1907,7 +2056,7 @@
         </div>
 
         <div class="paper-section">
-          <div class="paper-section-label">06 · 네 분의 교수·학습 경험 사례</div>
+          <div class="paper-section-label">06 · 네 명의 교수·학습 경험 사례</div>
           <div class="cases-grid">
             <div class="case-card c1">
               <div class="case-presenter">김혜진 선생님</div>
@@ -2088,7 +2237,7 @@
         </div>
 
         <div class="paper-section">
-          <div class="paper-section-label">06 · 네 분의 교수·학습 경험 사례</div>
+          <div class="paper-section-label">06 · 네 명의 교수·학습 경험 사례</div>
           <div class="cases-grid">
             <div class="case-card c1">
               <div class="case-presenter">김혜진 선생님</div>
@@ -2233,7 +2382,7 @@
         </div>
 
         <div class="paper-section">
-          <div class="paper-section-label">06 · 네 분의 교수·학습 경험 사례</div>
+          <div class="paper-section-label">06 · 네 명의 교수·학습 경험 사례</div>
           <div class="cases-grid">
             <div class="case-card c1">
               <div class="case-presenter">김혜진 선생님</div>
@@ -2283,7 +2432,7 @@
     <!-- 01. 전체 지형도 -->
     <div class="section-title">01 · 전체 지형도</div>
     <p class="section-intro">
-      네 분이 각자 선정한 논문은 모두 "학습자는 자기 학습을 정확히 판단하지 못한다"는 공통의 문제의식에서 출발하지만,
+      네 명이 각자 선정한 논문은 모두 "학습자는 자기 학습을 정확히 판단하지 못한다"는 공통의 문제의식에서 출발하지만,
       각자 다른 학습 환경에서 메타인지를 다룹니다. <strong>시대 축</strong>으로 나누면 발표 전체를 관통하는 자연스러운 서사가 만들어집니다.
     </p>
 
@@ -2332,7 +2481,7 @@
     <!-- 02. 발표 방법론 -->
     <div class="section-title" style="margin-top: 40px;">02 · 발표 진행 방식</div>
     <p class="section-intro">
-      네 분의 논문 발표를 어떻게 묶어 진행할지 세 가지 방안을 검토했습니다.
+      네 명의 논문 발표를 어떻게 묶어 진행할지 세 가지 방안을 검토했습니다.
       각 방법론은 준비 부담과 통합도가 다릅니다.
     </p>
 
@@ -2631,8 +2780,7 @@
 
     <div class="section-title">발표 방향 검토</div>
     <p class="section-intro">
-      STAGE 02에서 정리한 4편의 발제 내용과 STAGE 03의 시대 축 프레임을 기반으로,
-      팀원 4인의 역할을 분배하고 발표 방향을 검토합니다.
+      앞선 발제와 시대 축 프레임을 기반으로 역할 분배 및 발표 방향을 검토합니다.
     </p>
 
     <!-- 역할 분배 -->
@@ -3352,6 +3500,116 @@
 
   </div>
 
+  <!-- ========== STAGE 7: 최종 발표 자료 ========== -->
+  <div id="stage7" class="tab-content">
+
+    <div class="section-title">최종 발표 자료</div>
+    <p class="section-intro">
+      <strong>(최종) 3조_메타인지보정 · 인지부하 · 바람직한어려움으로 읽는 생성형AI</strong>의 전체 슬라이드 26장입니다.<br>
+    </p>
+
+    <!-- PDF Viewer -->
+    <div class="pdf-viewer" id="pdfViewer">
+      <div class="pdf-viewer-controls">
+        <button onclick="pdfNav(-1)" id="pdfPrev" disabled>&larr; 이전</button>
+        <span class="page-indicator" id="pdfPageNum">1 / 26</span>
+        <button onclick="pdfNav(1)" id="pdfNext">다음 &rarr;</button>
+      </div>
+      <div class="pdf-slide-container">
+        <div class="pdf-slide-label" id="pdfSlideLabel">SLIDE 01 — 표지</div>
+        <img id="pdfMainImg" src="final_pdf_images/page_01.png" alt="Slide 1">
+      </div>
+    </div>
+
+    <div class="footer-note" style="margin-top: 28px;">
+      <div class="footer-note-title">슬라이드 구성</div>
+      <table class="slide-map-table">
+        <thead>
+          <tr><th style="width:120px;">섹션</th><th>슬라이드</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="slide-map-section" style="color:var(--ink);">도입</td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(1)"><b>01</b> 표지</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(2)"><b>02</b> 앞 팀 발표와 연결</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(3)"><b>03</b> 핵심 주제</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(4)"><b>04</b> 전체 개요</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="slide-map-section" style="color:#6F6B5A;">Paper 1<br><span style="font-size:11px;color:var(--ink-3);">문제인식</span></td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(5)"><b>05</b> 섹션 표지</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(6)"><b>06</b> 인지적 구두쇠</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(7)"><b>07</b> '자신감'이 전략을 결정</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(8)"><b>08</b> 키워드 정리</span>
+            </td>
+          </tr>
+          <tr class="slide-map-bridge-row">
+            <td class="slide-map-section" style="color:var(--accent);">BRIDGE</td>
+            <td>
+              <span class="slide-map-chip slide-map-chip-bridge" onclick="pdfGoTo(9)"><b>09</b> 과신한 학습자가 즉답 AI를 만나면?</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="slide-map-section" style="color:#8C7A4F;">Paper 2<br><span style="font-size:11px;color:var(--ink-3);">위험증거</span></td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(10)"><b>10</b> 섹션 표지</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(11)"><b>11</b> GPT Base vs GPT Tutor</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(12)"><b>12</b> AI 사라진 순간: −17%</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(13)"><b>13</b> 양방향 착각</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(14)"><b>14</b> 키워드 정리</span>
+            </td>
+          </tr>
+          <tr class="slide-map-bridge-row">
+            <td class="slide-map-section" style="color:var(--accent);">BRIDGE</td>
+            <td>
+              <span class="slide-map-chip slide-map-chip-bridge" onclick="pdfGoTo(15)"><b>15</b> 무너진 메타인지를 어떻게 복원할 것인가?</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="slide-map-section" style="color:var(--accent);">Paper 3<br><span style="font-size:11px;color:var(--ink-3);">해결책</span></td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(16)"><b>16</b> 섹션 표지</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(17)"><b>17</b> Draft-first → AI Critique</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(18)"><b>18</b> AI 피드백 예시</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(19)"><b>19</b> 피드백 이후 사고과정</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(20)"><b>20</b> 전략·성취 향상</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="slide-map-section" style="color:var(--ink);">종합</td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(21)"><b>21</b> 세 키워드로 묶다</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(22)"><b>22</b> 방법론 비교·증거 수준</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="slide-map-section" style="color:var(--ink);">교육적 함의</td>
+            <td>
+              <span class="slide-map-chip" onclick="pdfGoTo(23)"><b>23</b> ① 교수자 관점</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(24)"><b>24</b> ② 도구 활용 관점</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(25)"><b>25</b> 개인별 함의</span>
+              <span class="slide-map-chip" onclick="pdfGoTo(26)"><b>26</b> Q&amp;A + 참고문헌</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-note">
+      <div class="footer-note-title">참고문헌</div>
+      <div class="footer-note-text" style="font-size: 12.5px; line-height: 1.8;">
+        Lee, H., &amp; Bosch, N. (2025). Calibration Discrepancy Predicts Students' Subsequent Metacognitive Strategy Use in Computer-based Learning Environments. <em>International Journal of Artificial Intelligence in Education</em>, 35, 3746–3779.<br><br>
+        Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., &amp; Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <em>PNAS</em>, 122(26), e2422633122.<br><br>
+        Chen, J., &amp; Alibakhshi, G. (2026). AI-Powered Applications' Effects on English Language Learners' Cognitive, Metacognitive, and Resource Management Strategies, and Language Achievement. <em>Journal of Computer Assisted Learning</em>, 42(1), e70171.<br><br>
+        Learning Sciences 강의 자료
+      </div>
+    </div>
+
+  </div>
+
 </div>
 
 <script>
@@ -3378,6 +3636,41 @@
     document.getElementById(pid).classList.add('active');
     event.currentTarget.classList.add('active');
   }
+
+  /* ── PDF Viewer (Stage 7) ── */
+  const PDF_TOTAL = 26;
+  const PDF_LABELS = [
+    '표지', '앞 팀 발표와 연결', '핵심 주제', '전체 개요',
+    '문제인식 섹션 표지', '인지적 구두쇠', "'성적'이 아닌 '자신감'이 전략을 결정", 'Paper 1 키워드 정리',
+    'BRIDGE: 과신한 학습자가 즉답 AI를 만나면?', '위험증거 섹션 표지',
+    'GPT Base vs GPT Tutor', 'AI가 사라진 순간: −17%', '양방향 착각', 'Paper 2 키워드 정리',
+    'BRIDGE: 무너진 메타인지 복원', '해결책 섹션 표지',
+    'Draft-first → AI Critique', 'AI 피드백의 구체적 예시', 'AI 피드백 이후 사고과정', '전략·성취 향상',
+    '세 키워드로 묶다', '논문 간 방법론 비교', '교육적 함의 ① 교수자', '교육적 함의 ② 도구 활용',
+    '개인별 교육적 함의', 'Q&A + 참고문헌'
+  ];
+  let pdfCurrent = 1;
+
+  function pdfPad(n) { return String(n).padStart(2, '0'); }
+
+  function pdfGoTo(n) {
+    pdfCurrent = Math.max(1, Math.min(PDF_TOTAL, n));
+    document.getElementById('pdfMainImg').src = 'final_pdf_images/page_' + pdfPad(pdfCurrent) + '.png';
+    document.getElementById('pdfPageNum').textContent = pdfCurrent + ' / ' + PDF_TOTAL;
+    document.getElementById('pdfSlideLabel').textContent = 'SLIDE ' + pdfPad(pdfCurrent) + ' — ' + PDF_LABELS[pdfCurrent - 1];
+    document.getElementById('pdfPrev').disabled = pdfCurrent === 1;
+    document.getElementById('pdfNext').disabled = pdfCurrent === PDF_TOTAL;
+  }
+
+  function pdfNav(dir) { pdfGoTo(pdfCurrent + dir); }
+
+  /* Keyboard navigation for PDF viewer */
+  document.addEventListener('keydown', function(e) {
+    var stage7 = document.getElementById('stage7');
+    if (!stage7 || !stage7.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') { pdfNav(-1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { pdfNav(1); e.preventDefault(); }
+  });
 </script>
 
 </body>
