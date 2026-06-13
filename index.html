@@ -1681,31 +1681,159 @@
 
   /* ────────────────────────────────────────────── MOBILE ── */
   @media (max-width: 768px) {
-    body { padding: 36px 18px 60px; }
-    .header { padding-bottom: 28px; margin-bottom: 36px; }
-    .header h1 { font-size: 26px; }
-    .header h1 .h1-sub { font-size: 17px; }
-    .header-meta { gap: 22px; }
-    .card-body { grid-template-columns: 1fr; gap: 20px; }
-    .card-head { flex-direction: column; gap: 12px; }
+    body { padding: 24px 14px 60px; }
+
+    /* Header */
+    .header { padding-bottom: 20px; margin-bottom: 24px; }
+    .header-top { flex-direction: column; gap: 16px; }
+    .header h1 { font-size: 22px; }
+    .header h1 .h1-sub { display: block; margin-left: 0; margin-top: 6px; font-size: 14px; }
+    .header-eyebrow { font-size: 10px; }
+    .header-meta { gap: 12px; flex-wrap: wrap; }
+    .meta-item { gap: 4px; }
+    .header-members { gap: 4px; }
+    .member-chip { font-size: 12px; padding: 3px 10px; }
+    .member-major { font-size: 10px; }
+
+    /* Tabs — horizontal scroll on mobile */
+    .tabs {
+      flex-direction: row;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-top: 10px;
+      margin-bottom: 28px;
+      gap: 0;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      flex: 0 0 auto;
+      min-width: 90px;
+      padding: 10px 14px 12px;
+      text-align: center;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .tab-title { font-size: 13px; }
+    .tab-num { font-size: 9px; }
+
+    /* Cards */
+    .card-body { grid-template-columns: 1fr; gap: 16px; }
+    .card-head { flex-direction: column; gap: 10px; padding: 16px 18px 14px; }
+    .card-body { padding: 16px 18px; }
     .badge-wrap { flex-direction: row; min-width: 0; }
-    .tabs { flex-direction: column; gap: 0; }
-    .tab { border-bottom: 1px solid var(--border); border-left: 2px solid transparent; padding: 14px 16px; }
-    .tab.active { border-bottom-color: var(--border); border-left-color: var(--accent); }
+    .card-title { font-size: 16px; }
+    .card-sub { font-size: 12px; }
+
+    /* Flow steps */
+    .flow-section { padding: 16px 18px; }
+    .flow-steps { gap: 6px; }
+    .step { font-size: 11px; padding: 5px 10px; }
+
+    /* Timeline */
     .timeline { grid-template-columns: 1fr; gap: 16px; }
     .timeline::before { display: none; }
-    .papers-row { grid-template-columns: 1fr 1fr; }
-    .summary-grid { grid-template-columns: 1fr; gap: 6px 0; }
-    .summary-grid dt { padding-top: 14px; }
-    .cases-grid { grid-template-columns: 1fr; }
-    .presenter-tabs { flex-direction: column; }
-    .ptab { flex: none; }
-    .topic-structure { padding: 22px 18px; }
-    .selection-note { flex-direction: column; gap: 8px; padding: 18px 20px; }
+    .era { text-align: left; padding: 0; }
+    .era-dot { margin: 0 0 10px; }
+
+    /* Papers row */
+    .papers-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+
+    /* Summary grid */
+    .summary-grid { grid-template-columns: 1fr; gap: 4px 0; }
+    .summary-grid dt { padding-top: 12px; font-size: 12px; }
+    .summary-grid dd { font-size: 13px; }
+
+    /* Cases */
+    .cases-grid { grid-template-columns: 1fr; gap: 10px; }
+
+    /* Presenter tabs */
+    .presenter-tabs { flex-direction: column; gap: 4px; }
+    .ptab { flex: none; padding: 8px 12px; }
+
+    /* Paper sections */
+    .paper-section { padding: 16px 16px; }
+    .paper-head { padding: 16px 16px 14px; }
+    .paper-title-en { font-size: 15px; }
+    .paper-presenter-name { font-size: 17px; }
+    .paper-presenter-row { gap: 8px; }
+    .paper-date { margin-left: 0; }
+    .paper-meta-row { gap: 12px; font-size: 11.5px; }
+
+    /* Topic structure */
+    .topic-structure { padding: 18px 14px; }
+    .axis-title { font-size: 17px; }
+    .axis-block { margin-bottom: 24px; padding-bottom: 24px; }
+
+    /* Selection note */
+    .selection-note { flex-direction: column; gap: 8px; padding: 16px 16px; }
     .selection-note-mark { min-width: 0; }
+    .selection-note-body { font-size: 13.5px; }
+
+    /* Decision guide */
+    .decision-guide { padding: 20px 16px; }
     .q-options { margin-left: 0; }
-    .paper-section { padding: 20px 22px; }
-    .paper-head { padding: 22px 22px 18px; }
+    .q-text { font-size: 15px; }
+    .q-head { gap: 10px; }
+    .q-option { padding: 12px 14px; gap: 12px; flex-wrap: wrap; }
+
+    /* Comparison table */
+    .comparison-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .comparison-table table { min-width: 480px; }
+    .comparison-table th, .comparison-table td { padding: 12px 14px; font-size: 12px; }
+
+    /* Slide map table */
+    .slide-map-table { font-size: 12px; }
+    .slide-map-section { white-space: normal; padding: 10px 8px; }
+    .slide-map-chip { font-size: 11px; padding: 2px 8px; }
+
+    /* Theme map */
+    .theme-map { padding: 20px 16px; }
+
+    /* Constants */
+    .constants { padding: 18px 16px; }
+    .constants-title { font-size: 15px; }
+
+    /* Slide box */
+    .slide-box { padding: 16px 16px; }
+    .slide-box-title { font-size: 15px; }
+
+    /* PDF viewer */
+    .pdf-viewer-controls { gap: 8px; padding: 10px 12px; flex-wrap: wrap; }
+    .pdf-viewer-controls button { padding: 5px 12px; font-size: 12px; }
+
+    /* Footer note */
+    .footer-note { padding: 16px 18px; }
+    .footer-note-text { font-size: 13px; }
+
+    /* TL;DR */
+    .tldr { padding: 14px 16px; }
+    .tldr-text { font-size: 13px; }
+
+    /* Section */
+    .section-intro { font-size: 14px; margin-bottom: 24px; }
+  }
+
+  /* ────────────────────────────────────────── SMALL MOBILE ── */
+  @media (max-width: 400px) {
+    body { padding: 16px 10px 48px; }
+    .header h1 { font-size: 19px; }
+    .header h1 .h1-sub { font-size: 13px; }
+    .tab { min-width: 78px; padding: 8px 10px 10px; }
+    .tab-title { font-size: 12px; }
+    .papers-row { grid-template-columns: 1fr; }
+    .paper-mini { padding: 10px 12px 14px; }
+    .card-head { padding: 14px 14px 12px; }
+    .card-body { padding: 14px 14px; }
+    .era-name { font-size: 14px; }
+    .q-option { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .q-option strong { margin-left: 0; }
+    .member-chip { font-size: 11px; padding: 2px 8px; }
+    .reflection-header { padding: 14px 16px 12px; gap: 10px; }
+    .reflection-avatar { width: 36px; height: 36px; font-size: 14px; }
+    .reflection-body { padding: 14px 16px 18px; }
+    .reflection-body p { font-size: 13px; }
+    .reflection-keywords { padding: 0 16px 14px; }
   }
 </style>
 </head>
@@ -4033,7 +4161,8 @@
     document.getElementById(tabId).classList.add('active');
     event.currentTarget.classList.add('active');
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const tabsBar = document.querySelector('.tabs');
+    tabsBar.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   function showPresenter(event, pid) {
